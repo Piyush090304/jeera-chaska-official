@@ -4,127 +4,160 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Jeera Chaska | Premium Jeera Soda</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
-body {
-    margin: 0;
-    font-family: 'Inter', sans-serif;
-    background: linear-gradient(to bottom, #f3eadc, #efe4d2);
-    color: #4b2e2e;
+body{
+margin:0;
+font-family:'Poppins',sans-serif;
+background:#f5efe6;
+color:#4b2e2e;
 }
 
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 40px;
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 40px;
+background:#f0e6d6;
 }
 
-.logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 24px;
-    font-weight: 700;
-    color: #4b2e2e;
+.logo{
+display:flex;
+align-items:center;
+gap:10px;
 }
 
-.hero {
-    padding: 80px 40px;
-    max-width: 900px;
+.logo img{
+width:50px;
 }
 
-.badge {
-    display: inline-block;
-    background: gold;
-    color: #4b2e2e;
-    padding: 8px 18px;
-    border-radius: 30px;
-    font-weight: 600;
-    margin-bottom: 30px;
+.hero{
+text-align:center;
+padding:80px 20px;
 }
 
-.hero h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 56px;
-    margin: 0 0 20px 0;
+.hero h1{
+font-family:'Playfair Display',serif;
+font-size:50px;
+color:#2e7d32;
+margin:0;
 }
 
-.hero h1 span {
-    color: #198754;
+.hero p{
+font-size:20px;
+margin-top:10px;
 }
 
-.hero p {
-    font-size: 20px;
-    line-height: 1.6;
-    max-width: 600px;
+.badge{
+display:inline-block;
+margin-top:20px;
+padding:10px 20px;
+background:gold;
+border-radius:30px;
+font-weight:500;
 }
 
-.notify-box {
-    background: white;
-    padding: 30px;
-    border-radius: 20px;
-    margin-top: 40px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-    max-width: 500px;
+.section{
+padding:70px 20px;
+max-width:1000px;
+margin:auto;
 }
 
-.btn {
-    display: inline-block;
-    padding: 12px 24px;
-    border-radius: 25px;
-    text-decoration: none;
-    font-weight: 600;
-    margin-top: 15px;
+.section h2{
+color:#c9a227;
+font-size:18px;
+letter-spacing:2px;
 }
 
-.whatsapp {
-    background: #198754;
-    color: white;
+.section h3{
+font-family:'Playfair Display',serif;
+font-size:40px;
+margin-top:10px;
 }
 
-.email {
-    background: gold;
-    color: #4b2e2e;
+.features{
+display:flex;
+gap:20px;
+margin-top:40px;
+flex-wrap:wrap;
 }
 
-footer {
-    margin-top: 80px;
-    padding: 20px;
-    text-align: center;
-    font-size: 14px;
-    color: #777;
+.feature-box{
+flex:1;
+background:white;
+padding:30px;
+border-radius:15px;
+box-shadow:0 5px 20px rgba(0,0,0,0.05);
+}
+
+.contact{
+text-align:center;
+padding:50px 20px;
+background:#2e7d32;
+color:white;
+}
+
+footer{
+text-align:center;
+padding:20px;
+background:#1b5e20;
+color:white;
+font-size:14px;
 }
 </style>
 </head>
 
 <body>
 
-<div class="navbar">
-    <div class="logo">Jeera Chaska</div>
+<header>
+<div class="logo">
+<img src="https://i.imgur.com/3ZQ3Z4F.png" alt="logo">
+<h2>Jeera Chaska</h2>
+</div>
+</header>
+
+<section class="hero">
+<h1>Premium Jeera Soda</h1>
+<p>Powerful • Refreshing • Authentic</p>
+<div class="badge">Launching 2027 – Pune</div>
+</section>
+
+<section class="section">
+<h2>OUR STORY</h2>
+<h3>Sawariyaseth Beverage Company</h3>
+<p>
+Born from a passion for authentic Indian flavors, Sawariyaseth Beverage Company is bringing the beloved taste of Jeera Soda to the streets of Pune.
+Our mission is simple – deliver premium quality beverages that celebrate our rich culinary heritage.
+</p>
+<p>
+Jeera Chaska – our flagship brand – embodies the perfect blend of traditional jeera (cumin) goodness with refreshing fizz that makes every sip memorable.
+We source the finest ingredients and follow time-tested recipes to ensure every bottle delivers authentic taste.
+</p>
+
+<div class="features">
+<div class="feature-box">
+<h4>Refreshing Taste</h4>
+<p>Loved by everyone</p>
 </div>
 
-<div class="hero">
-    <div class="badge">✨ Coming Soon to Pune</div>
-
-    <h1>Pune’s Own Jeera <span>Fizz</span></h1>
-
-    <p>
-        Experience the authentic taste of traditional Jeera Soda crafted with
-        premium cumin and pure refreshment.
-        <strong>Jeera Chaska</strong> brings the desi flavor you love.
-    </p>
-
-    <div class="notify-box">
-        <h3>Get notified when we launch!</h3>
-        <a href="https://wa.me/918261937733" class="btn whatsapp">WhatsApp</a>
-        <a href="mailto:jeerachaskaofficial550@gmail.com" class="btn email">Email</a>
-    </div>
+<div class="feature-box">
+<h4>Made in Maharashtra</h4>
+<p>Proudly manufactured in Pune</p>
 </div>
+</div>
+</section>
+
+<section class="contact">
+<h2>Contact Us</h2>
+<p>Email: Jeerachaskaofficial550@gmail.com</p>
+<p>WhatsApp: +91 8261937733</p>
+</section>
 
 <footer>
-© 2027 Jeera Chaska. Launching in Pune, India.
+© 2027 Jeera Chaska | Sawariyaseth Beverage Company
 </footer>
 
 </body>
 </html>
+
