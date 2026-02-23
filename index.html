@@ -210,11 +210,12 @@ We source the finest ingredients and follow time-tested recipes to ensure every 
 
 
 <section class="why-jeera">
-  <div class="container">
-    
-    <div class="why-content">
+  <div class="why-wrapper">
+
+    <div class="why-left">
       <p class="small-title">THE POWER OF CUMIN</p>
       <h2>Why Jeera?</h2>
+
       <p class="description">
         Jeera (Cumin) has been a cornerstone of Indian cuisine and Ayurveda for centuries. 
         Its unique flavor profile and health benefits make it the perfect base for a refreshing soda 
@@ -222,20 +223,109 @@ We source the finest ingredients and follow time-tested recipes to ensure every 
       </p>
 
       <ul class="benefits">
-        <li>✔ Rich in antioxidants and iron</li>
-        <li>✔ Promotes healthy digestion</li>
-        <li>✔ Perfect refreshment for all ages</li>
-        <li>✔ Natural cooling properties</li>
+        <li>Rich in antioxidants and iron</li>
+        <li>Promotes healthy digestion</li>
+        <li>Perfect refreshment for all ages</li>
+        <li>Natural cooling properties</li>
       </ul>
     </div>
 
-    <div class="IMG_1166.jpeg">
+    <div class="why-right">
       <img src="IMG_1165.jpeg" alt="Cumin Seeds">
     </div>
-    
 
   </div>
 </section>
+
+  
+<style>
+.why-jeera {
+  width: 100%;
+  background: linear-gradient(135deg, #3a1f16, #6b3e2e);
+  padding: 100px 5%;
+  box-sizing: border-box;
+}
+
+.why-wrapper {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+.why-left {
+  flex: 1;
+  color: white;
+}
+
+.small-title {
+  color: #f4b400;
+  font-weight: 600;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.why-left h2 {
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+
+.description {
+  font-size: 18px;
+  line-height: 1.7;
+  margin-bottom: 30px;
+}
+
+.benefits {
+  list-style: none;
+  padding: 0;
+}
+
+.benefits li {
+  margin-bottom: 15px;
+  font-size: 18px;
+  position: relative;
+  padding-left: 25px;
+}
+
+.benefits li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #f4b400;
+}
+
+/* IMAGE SIDE FIX */
+.why-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.why-right img {
+  width: 100%;
+  max-width: 550px;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+/* Mobile Fix */
+@media (max-width: 768px) {
+  .why-wrapper {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .why-right img {
+    height: 350px;
+  }
+}
+
+</style>
+
 
   
 <section class="contact">
