@@ -350,8 +350,7 @@ We source the finest ingredients and follow time-tested recipes to ensure every 
     <input type="email" placeholder="Email">
     <input type="text" placeholder="City">
     <textarea placeholder="Message (Optional)"></textarea>
-    <button class="submit-btn">Submit Retail Inquiry</button>
-  </div>
+    <button class="submit-btn">Submit Distributor Inquiry</button>
 
   <!-- Distributor Form -->
   <div id="distForm" class="form-box" style="display:none;">
@@ -362,8 +361,7 @@ We source the finest ingredients and follow time-tested recipes to ensure every 
     <input type="email" placeholder="Email">
     <input type="text" placeholder="District / Region">
     <textarea placeholder="Investment Capacity / Questions"></textarea>
-    <button class="submit-btn">Submit Distributor Inquiry</button>
-  </div>
+    <button type="button" class="submit-btn" onclick="sendDist()">Submit Distributor Inquiry</button>
 
 </section>
 
@@ -445,18 +443,42 @@ We source the finest ingredients and follow time-tested recipes to ensure every 
 </style>
 
 <script>
-function showRetail() {
-  document.getElementById("retailForm").style.display = "block";
-  document.getElementById("distForm").style.display = "none";
-  document.getElementById("retailBtn").classList.add("active");
-  document.getElementById("distBtn").classList.remove("active");
+function sendRetail() {
+  let name = document.querySelector("#retailForm input[placeholder='Your Name']").value;
+  let business = document.querySelector("#retailForm input[placeholder='Business Name']").value;
+  let phone = document.querySelector("#retailForm input[placeholder='Phone Number']").value;
+  let email = document.querySelector("#retailForm input[placeholder='Email']").value;
+  let city = document.querySelector("#retailForm input[placeholder='City']").value;
+  let message = document.querySelector("#retailForm textarea").value;
+
+  let text = `New Retailer Inquiry:%0A
+Name: ${name}%0A
+Business: ${business}%0A
+Phone: ${phone}%0A
+Email: ${email}%0A
+City: ${city}%0A
+Message: ${message}`;
+
+  window.open(`https://wa.me/918261937733?text=${text}`, "_blank");
 }
 
-function showDist() {
-  document.getElementById("retailForm").style.display = "none";
-  document.getElementById("distForm").style.display = "block";
-  document.getElementById("distBtn").classList.add("active");
-  document.getElementById("retailBtn").classList.remove("active");
+function sendDist() {
+  let name = document.querySelector("#distForm input[placeholder='Your Name']").value;
+  let company = document.querySelector("#distForm input[placeholder='Company Name']").value;
+  let phone = document.querySelector("#distForm input[placeholder='Phone Number']").value;
+  let email = document.querySelector("#distForm input[placeholder='Email']").value;
+  let region = document.querySelector("#distForm input[placeholder='District / Region']").value;
+  let investment = document.querySelector("#distForm textarea").value;
+
+  let text = `New Distributor Inquiry:%0A
+Name: ${name}%0A
+Company: ${company}%0A
+Phone: ${phone}%0A
+Email: ${email}%0A
+Region: ${region}%0A
+Investment/Message: ${investment}`;
+
+  window.open(`https://wa.me/918261937733?text=${text}`, "_blank");
 }
 </script>
   
