@@ -335,11 +335,13 @@ We source the finest ingredients and follow time-tested recipes to ensure every 
     let's build something amazing together.
   </p>
 
-  <!-- Toggle Buttons -->
-  <div class="toggle-buttons">
-    <button onclick="showRetail()" id="retailBtn" class="active">For Retailers</button>
-    <button onclick="showDist()" id="distBtn">For Distributors</button>
-  </div>
+  <label for="businessType">Select Business Type</label>
+
+<select id="businessType" name="businessType" required>
+  <option value="">-- Select --</option>
+  <option value="Retailer">Retailer</option>
+  <option value="Distributor">Distributor</option>
+</select>
 
   <!-- Retailer Form -->
   <div id="retailForm" class="form-box">
