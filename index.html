@@ -343,25 +343,27 @@ We source the finest ingredients and follow time-tested recipes to ensure every 
 
   <!-- Retailer Form -->
   <div id="retailForm" class="form-box">
-    <h3>Retailer Inquiry</h3>
-    <input type="text" placeholder="Your Name">
-    <input type="text" placeholder="Business Name">
-    <input type="tel" placeholder="Phone Number">
-    <input type="email" placeholder="Email">
-    <input type="text" placeholder="City">
-    <textarea placeholder="Message (Optional)"></textarea>
-    <button class="submit-btn">Submit Distributor Inquiry</button>
+  <h3>Retailer Inquiry</h3>
+  <input type="text" id="r_name" placeholder="Your Name">
+  <input type="text" id="r_business" placeholder="Business Name">
+  <input type="tel" id="r_phone" placeholder="Phone Number">
+  <input type="email" id="r_email" placeholder="Email">
+  <input type="text" id="r_city" placeholder="City">
+  <textarea id="r_message" placeholder="Message (Optional)"></textarea>
+  <button type="button" class="submit-btn" onclick="sendRetail()">Submit Retail Inquiry</button>
+</div>
 
   <!-- Distributor Form -->
   <div id="distForm" class="form-box" style="display:none;">
-    <h3>Distributor Inquiry</h3>
-    <input type="text" placeholder="Your Name">
-    <input type="text" placeholder="Company Name">
-    <input type="tel" placeholder="Phone Number">
-    <input type="email" placeholder="Email">
-    <input type="text" placeholder="District / Region">
-    <textarea placeholder="Investment Capacity / Questions"></textarea>
-    <button type="button" class="submit-btn" onclick="sendDist()">Submit Distributor Inquiry</button>
+  <h3>Distributor Inquiry</h3>
+  <input type="text" id="d_name" placeholder="Your Name">
+  <input type="text" id="d_company" placeholder="Company Name">
+  <input type="tel" id="d_phone" placeholder="Phone Number">
+  <input type="email" id="d_email" placeholder="Email">
+  <input type="text" id="d_region" placeholder="District / Region">
+  <textarea id="d_investment" placeholder="Investment Capacity / Questions"></textarea>
+  <button type="button" class="submit-btn" onclick="sendDist()">Submit Distributor Inquiry</button>
+</div>
 
 </section>
 
@@ -444,41 +446,41 @@ We source the finest ingredients and follow time-tested recipes to ensure every 
 
 <script>
 function sendRetail() {
-  let name = document.querySelector("#retailForm input[placeholder='Your Name']").value;
-  let business = document.querySelector("#retailForm input[placeholder='Business Name']").value;
-  let phone = document.querySelector("#retailForm input[placeholder='Phone Number']").value;
-  let email = document.querySelector("#retailForm input[placeholder='Email']").value;
-  let city = document.querySelector("#retailForm input[placeholder='City']").value;
-  let message = document.querySelector("#retailForm textarea").value;
+  let name = document.getElementById("r_name").value;
+  let business = document.getElementById("r_business").value;
+  let phone = document.getElementById("r_phone").value;
+  let email = document.getElementById("r_email").value;
+  let city = document.getElementById("r_city").value;
+  let message = document.getElementById("r_message").value;
 
-  let text = `New Retailer Inquiry:%0A
-Name: ${name}%0A
-Business: ${business}%0A
-Phone: ${phone}%0A
-Email: ${email}%0A
-City: ${city}%0A
-Message: ${message}`;
+  let text = "New Retailer Inquiry:%0A"
+    + "Name: " + name + "%0A"
+    + "Business: " + business + "%0A"
+    + "Phone: " + phone + "%0A"
+    + "Email: " + email + "%0A"
+    + "City: " + city + "%0A"
+    + "Message: " + message;
 
-  window.open(`https://wa.me/918261937733?text=${text}`, "_blank");
+  window.open("https://wa.me/918261937733?text=" + text, "_blank");
 }
 
 function sendDist() {
-  let name = document.querySelector("#distForm input[placeholder='Your Name']").value;
-  let company = document.querySelector("#distForm input[placeholder='Company Name']").value;
-  let phone = document.querySelector("#distForm input[placeholder='Phone Number']").value;
-  let email = document.querySelector("#distForm input[placeholder='Email']").value;
-  let region = document.querySelector("#distForm input[placeholder='District / Region']").value;
-  let investment = document.querySelector("#distForm textarea").value;
+  let name = document.getElementById("d_name").value;
+  let company = document.getElementById("d_company").value;
+  let phone = document.getElementById("d_phone").value;
+  let email = document.getElementById("d_email").value;
+  let region = document.getElementById("d_region").value;
+  let investment = document.getElementById("d_investment").value;
 
-  let text = `New Distributor Inquiry:%0A
-Name: ${name}%0A
-Company: ${company}%0A
-Phone: ${phone}%0A
-Email: ${email}%0A
-Region: ${region}%0A
-Investment/Message: ${investment}`;
+  let text = "New Distributor Inquiry:%0A"
+    + "Name: " + name + "%0A"
+    + "Company: " + company + "%0A"
+    + "Phone: " + phone + "%0A"
+    + "Email: " + email + "%0A"
+    + "Region: " + region + "%0A"
+    + "Investment/Message: " + investment;
 
-  window.open(`https://wa.me/918261937733?text=${text}`, "_blank");
+  window.open("https://wa.me/918261937733?text=" + text, "_blank");
 }
 </script>
   
