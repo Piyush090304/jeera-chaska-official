@@ -326,7 +326,139 @@ We source the finest ingredients and follow time-tested recipes to ensure every 
 
 </style>
 
+<section class="partner-section">
 
+  <h4 class="small-title">PARTNER WITH US</h4>
+  <h2>Join the Jeera Chaska Family</h2>
+  <p class="subtitle">
+    We believe in growing together! Whether you're a retailer or distributor,
+    let's build something amazing together.
+  </p>
+
+  <!-- Toggle Buttons -->
+  <div class="toggle-buttons">
+    <button onclick="showRetail()" id="retailBtn" class="active">For Retailers</button>
+    <button onclick="showDist()" id="distBtn">For Distributors</button>
+  </div>
+
+  <!-- Retailer Form -->
+  <div id="retailForm" class="form-box">
+    <h3>Retailer Inquiry</h3>
+    <input type="text" placeholder="Your Name">
+    <input type="text" placeholder="Business Name">
+    <input type="tel" placeholder="Phone Number">
+    <input type="email" placeholder="Email">
+    <input type="text" placeholder="City">
+    <textarea placeholder="Message (Optional)"></textarea>
+    <button class="submit-btn">Submit Retail Inquiry</button>
+  </div>
+
+  <!-- Distributor Form -->
+  <div id="distForm" class="form-box" style="display:none;">
+    <h3>Distributor Inquiry</h3>
+    <input type="text" placeholder="Your Name">
+    <input type="text" placeholder="Company Name">
+    <input type="tel" placeholder="Phone Number">
+    <input type="email" placeholder="Email">
+    <input type="text" placeholder="District / Region">
+    <textarea placeholder="Investment Capacity / Questions"></textarea>
+    <button class="submit-btn">Submit Distributor Inquiry</button>
+  </div>
+
+</section>
+
+<style>
+.partner-section {
+  text-align: center;
+  padding: 80px 5%;
+  background: #f7f3e8;
+}
+
+.small-title {
+  color: #d4a017;
+  letter-spacing: 2px;
+}
+
+.partner-section h2 {
+  font-size: 42px;
+  margin-bottom: 15px;
+}
+
+.subtitle {
+  max-width: 700px;
+  margin: auto;
+  margin-bottom: 40px;
+  color: #6b5c4d;
+}
+
+/* Toggle */
+.toggle-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+
+.toggle-buttons button {
+  padding: 12px 25px;
+  border: none;
+  cursor: pointer;
+  background: #e6dfcf;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.toggle-buttons .active {
+  background: #d4a017;
+  color: white;
+}
+
+/* Form */
+.form-box {
+  background: white;
+  max-width: 600px;
+  margin: auto;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.form-box input,
+.form-box textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.submit-btn {
+  background: #d4a017;
+  color: white;
+  padding: 12px;
+  border: none;
+  width: 100%;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+</style>
+
+<script>
+function showRetail() {
+  document.getElementById("retailForm").style.display = "block";
+  document.getElementById("distForm").style.display = "none";
+  document.getElementById("retailBtn").classList.add("active");
+  document.getElementById("distBtn").classList.remove("active");
+}
+
+function showDist() {
+  document.getElementById("retailForm").style.display = "none";
+  document.getElementById("distForm").style.display = "block";
+  document.getElementById("distBtn").classList.add("active");
+  document.getElementById("retailBtn").classList.remove("active");
+}
+</script>
   
 <section class="contact">
 <h2>Contact Us</h2>
