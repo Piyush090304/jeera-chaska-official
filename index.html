@@ -353,24 +353,6 @@ We source the finest ingredients and follow time-tested recipes to ensure every 
    ...
 </div>
 
-<script>
-document.getElementById("businessType").addEventListener("change", function() {
-
-    let type = this.value;
-
-    if (type === "Retailer") {
-        document.getElementById("retailForm").style.display = "block";
-        document.getElementById("distForm").style.display = "none";
-    } 
-    else if (type === "Distributor") {
-        document.getElementById("retailForm").style.display = "none";
-        document.getElementById("distForm").style.display = "block";
-    }
-
-});
-</script>
-
-  
   <!-- Retailer Form -->
   <div id="retailForm" class="form-box">
   <h3>Retailer Inquiry</h3>
@@ -398,6 +380,23 @@ document.getElementById("businessType").addEventListener("change", function() {
 </section>
 
 <style>
+
+  <script>
+document.getElementById("businessType").addEventListener("change", function() {
+
+    let type = this.value;
+
+    if (type === "Retailer") {
+        document.getElementById("retailForm").style.display = "block";
+        document.getElementById("distForm").style.display = "none";
+    } 
+    else if (type === "Distributor") {
+        document.getElementById("retailForm").style.display = "none";
+        document.getElementById("distForm").style.display = "block";
+    }
+
+});
+</script>
 .partner-section {
   text-align: center;
   padding: 80px 5%;
