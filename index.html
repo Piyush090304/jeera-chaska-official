@@ -343,6 +343,21 @@ We source the finest ingredients and follow time-tested recipes to ensure every 
   <option value="Distributor">Distributor</option>
 </select>
 
+  <script>
+document.getElementById("businessType").addEventListener("change", function() {
+    let selectedType = this.value;
+    let title = document.getElementById("formTitle");
+
+    if (selectedType === "Retailer") {
+        title.innerText = "Retailer Inquiry Form";
+    } 
+    else if (selectedType === "Distributor") {
+        title.innerText = "Distributor Inquiry Form";
+    }
+});
+</script>
+
+  
   <!-- Retailer Form -->
   <div id="retailForm" class="form-box">
   <h3>Retailer Inquiry</h3>
