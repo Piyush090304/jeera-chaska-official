@@ -379,32 +379,71 @@ We source the finest ingredients and follow time-tested recipes to ensure every 
 
 <style>
 .partner-section {
-  max-width:600px;
+  max-width:700px;
   margin:auto;
-  padding:40px 20px;
+  padding:60px 20px;
+  text-align:center;
+  background: linear-gradient(135deg, #fdf8ec, #fff);
+  border-radius:20px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
 }
 
-select, input, textarea {
+/* 🔥 Attractive Heading */
+.partner-section h2 {
+  font-size:42px;
+  font-weight:800;
+  background: linear-gradient(45deg, #d4a017, #8b5e00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom:30px;
+  letter-spacing:1px;
+}
+
+/* Bigger Dropdown */
+select {
   width:100%;
-  padding:10px;
-  margin:10px 0;
-  border:1px solid #ccc;
-  border-radius:6px;
+  padding:15px;
+  font-size:18px;
+  font-weight:600;
+  border:2px solid #d4a017;
+  border-radius:10px;
+  background:#fffdf7;
+  cursor:pointer;
+  transition:0.3s;
 }
 
-button {
-  background:#d4a017;
-  color:white;
+select:focus {
+  outline:none;
+  box-shadow:0 0 10px rgba(212,160,23,0.4);
+}
+
+/* Inputs */
+input, textarea {
+  width:100%;
   padding:12px;
+  margin:12px 0;
+  border:1px solid #ddd;
+  border-radius:8px;
+  font-size:15px;
+}
+
+/* Button */
+button {
+  background: linear-gradient(45deg, #d4a017, #b8860b);
+  color:white;
+  padding:14px;
   border:none;
   width:100%;
-  border-radius:6px;
+  border-radius:8px;
+  font-size:16px;
   font-weight:bold;
   cursor:pointer;
+  transition:0.3s;
 }
 
 button:hover {
-  opacity:0.9;
+  transform: translateY(-2px);
+  box-shadow:0 8px 20px rgba(0,0,0,0.15);
 }
 </style>
 
