@@ -335,55 +335,90 @@ We source the finest ingredients and follow time-tested recipes to ensure every 
     let's build something amazing together.
   </p>
 
-  <label for="businessType">Select Business Type</label>
+<section class="partner-section">
 
-<select id="businessType">
+<h2 style="text-align:center;">Partner With Jeera Chaska</h2>
+
+<label for="businessType"><strong>Select Business Type</strong></label>
+
+<select id="businessType" required>
   <option value="">-- Select --</option>
   <option value="Retailer">Retailer</option>
   <option value="Distributor">Distributor</option>
 </select>
 
-<div id="retailForm">
-   <h3>Retailer Inquiry</h3>
-   ...
-</div>
-
-<div id="distForm" style="display:none;">
-   <h3>Distributor Inquiry</h3>
-   ...
-</div>
-
-  <!-- Retailer Form -->
-  <div id="retailForm" class="form-box">
+<!-- Retailer Form -->
+<div id="retailForm" style="margin-top:20px; display:none;">
   <h3>Retailer Inquiry</h3>
-  <input type="text" id="r_name" placeholder="Your Name">
-  <input type="text" id="r_business" placeholder="Business Name">
-  <input type="tel" id="r_phone" placeholder="Phone Number">
+
+  <input type="text" id="r_name" placeholder="Your Name" required>
+  <input type="text" id="r_business" placeholder="Business Name" required>
+  <input type="tel" id="r_phone" placeholder="Phone Number" required>
   <input type="email" id="r_email" placeholder="Email">
   <input type="text" id="r_city" placeholder="City">
-  <textarea id="r_message" placeholder="Message (Optional)"></textarea>
-  <button type="button" class="submit-btn" onclick="sendRetail()">Submit Retail Inquiry</button>
+  <textarea id="r_message" placeholder="Message"></textarea>
+
+  <button type="button" onclick="sendRetail()">Submit Retailer Inquiry</button>
 </div>
 
-  <!-- Distributor Form -->
-  <div id="distForm" class="form-box" style="display:none;">
+<!-- Distributor Form -->
+<div id="distForm" style="margin-top:20px; display:none;">
   <h3>Distributor Inquiry</h3>
-  <input type="text" id="d_name" placeholder="Your Name">
-  <input type="text" id="d_company" placeholder="Company Name">
-  <input type="tel" id="d_phone" placeholder="Phone Number">
+
+  <input type="text" id="d_name" placeholder="Your Name" required>
+  <input type="text" id="d_company" placeholder="Company Name" required>
+  <input type="tel" id="d_phone" placeholder="Phone Number" required>
   <input type="email" id="d_email" placeholder="Email">
   <input type="text" id="d_region" placeholder="District / Region">
-  <textarea id="d_investment" placeholder="Investment Capacity / Questions"></textarea>
-  <button type="button" class="submit-btn" onclick="sendDist()">Submit Distributor Inquiry</button>
+  <textarea id="d_message" placeholder="Investment / Message"></textarea>
+
+  <button type="button" onclick="sendDist()">Submit Distributor Inquiry</button>
 </div>
 
 </section>
 
 <style>
+.partner-section {
+  max-width:600px;
+  margin:auto;
+  padding:40px 20px;
+}
 
-  <script>
+select, input, textarea {
+  width:100%;
+  padding:10px;
+  margin:10px 0;
+  border:1px solid #ccc;
+  border-radius:6px;
+}
+
+button {
+  background:#d4a017;
+  color:white;
+  padding:12px;
+  border:none;
+  width:100%;
+  border-radius:6px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+button:hover {
+  opacity:0.9;
+}
+</style>
+
+<!-- EmailJS -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<script>
+/* ========== INIT EMAILJS ========== */
+(function(){
+  emailjs.init("YOUR_PUBLIC_KEY"); // replace
+})();
+
+/* ========== SWITCH FORMS ========== */
 document.getElementById("businessType").addEventListener("change", function() {
-
     let type = this.value;
 
     if (type === "Retailer") {
@@ -394,87 +429,11 @@ document.getElementById("businessType").addEventListener("change", function() {
         document.getElementById("retailForm").style.display = "none";
         document.getElementById("distForm").style.display = "block";
     }
-
 });
-</script>
-.partner-section {
-  text-align: center;
-  padding: 80px 5%;
-  background: #f7f3e8;
-}
 
-.small-title {
-  color: #d4a017;
-  letter-spacing: 2px;
-}
-
-.partner-section h2 {
-  font-size: 42px;
-  margin-bottom: 15px;
-}
-
-.subtitle {
-  max-width: 700px;
-  margin: auto;
-  margin-bottom: 40px;
-  color: #6b5c4d;
-}
-
-/* Toggle */
-.toggle-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-bottom: 40px;
-}
-
-.toggle-buttons button {
-  padding: 12px 25px;
-  border: none;
-  cursor: pointer;
-  background: #e6dfcf;
-  border-radius: 8px;
-  font-weight: 600;
-}
-
-.toggle-buttons .active {
-  background: #d4a017;
-  color: white;
-}
-
-/* Form */
-.form-box {
-  background: white;
-  max-width: 600px;
-  margin: auto;
-  padding: 40px;
-  border-radius: 15px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-}
-
-.form-box input,
-.form-box textarea {
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 15px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-}
-
-.submit-btn {
-  background: #d4a017;
-  color: white;
-  padding: 12px;
-  border: none;
-  width: 100%;
-  border-radius: 8px;
-  font-weight: bold;
-  cursor: pointer;
-}
-</style>
-
-<script>
+/* ========== SEND RETAILER ========== */
 function sendRetail() {
+
   let name = document.getElementById("r_name").value;
   let business = document.getElementById("r_business").value;
   let phone = document.getElementById("r_phone").value;
@@ -482,6 +441,18 @@ function sendRetail() {
   let city = document.getElementById("r_city").value;
   let message = document.getElementById("r_message").value;
 
+  // EMAIL
+  emailjs.send("YOUR_SERVICE_ID","YOUR_TEMPLATE_ID",{
+    type: "Retailer",
+    name: name,
+    business: business,
+    phone: phone,
+    email: email,
+    region: city,
+    message: message
+  });
+
+  // WHATSAPP
   let text = "New Retailer Inquiry:%0A"
     + "Name: " + name + "%0A"
     + "Business: " + business + "%0A"
@@ -493,21 +464,35 @@ function sendRetail() {
   window.open("https://wa.me/918261937733?text=" + text, "_blank");
 }
 
+/* ========== SEND DISTRIBUTOR ========== */
 function sendDist() {
+
   let name = document.getElementById("d_name").value;
   let company = document.getElementById("d_company").value;
   let phone = document.getElementById("d_phone").value;
   let email = document.getElementById("d_email").value;
   let region = document.getElementById("d_region").value;
-  let investment = document.getElementById("d_investment").value;
+  let message = document.getElementById("d_message").value;
 
+  // EMAIL
+  emailjs.send("YOUR_SERVICE_ID","YOUR_TEMPLATE_ID",{
+    type: "Distributor",
+    name: name,
+    business: company,
+    phone: phone,
+    email: email,
+    region: region,
+    message: message
+  });
+
+  // WHATSAPP
   let text = "New Distributor Inquiry:%0A"
     + "Name: " + name + "%0A"
     + "Company: " + company + "%0A"
     + "Phone: " + phone + "%0A"
     + "Email: " + email + "%0A"
     + "Region: " + region + "%0A"
-    + "Investment/Message: " + investment;
+    + "Message: " + message;
 
   window.open("https://wa.me/918261937733?text=" + text, "_blank");
 }
