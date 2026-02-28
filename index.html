@@ -343,18 +343,30 @@ We source the finest ingredients and follow time-tested recipes to ensure every 
   <option value="Distributor">Distributor</option>
 </select>
 
-<h3 id="formTitle">Retailer Inquiry Form</h3>
+<div id="retailForm">
+   <h3>Retailer Inquiry</h3>
+   ...
+</div>
+
+<div id="distForm" style="display:none;">
+   <h3>Distributor Inquiry</h3>
+   ...
+</div>
 
 <script>
 document.getElementById("businessType").addEventListener("change", function() {
+
     let type = this.value;
 
     if (type === "Retailer") {
-        document.getElementById("formTitle").innerText = "Retailer Inquiry Form";
+        document.getElementById("retailForm").style.display = "block";
+        document.getElementById("distForm").style.display = "none";
     } 
     else if (type === "Distributor") {
-        document.getElementById("formTitle").innerText = "Distributor Inquiry Form";
+        document.getElementById("retailForm").style.display = "none";
+        document.getElementById("distForm").style.display = "block";
     }
+
 });
 </script>
 
