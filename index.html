@@ -335,207 +335,194 @@ We source the finest ingredients and follow time-tested recipes to ensure every 
     let's build something amazing together.
   </p>
 
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jeera Chaska</title>
+
+<style>
+
+/* BODY */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #fdf8f3;
+}
+
+/* PARTNER SECTION */
+.partner-section {
+  background: linear-gradient(135deg, #3b1f0f, #6b3e1d);
+  padding: 60px 20px;
+  text-align: center;
+  color: white;
+}
+
+.partner-heading {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.lead-counter {
+  font-size: 20px;
+  margin-bottom: 30px;
+  font-weight: bold;
+  color: #ffd700;
+}
+
+/* FORM */
+#partnerForm {
+  max-width: 400px;
+  margin: auto;
+}
+
+#partnerForm label {
+  display: block;
+  text-align: left;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+#partnerForm select {
+  width: 100%;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: none;
+}
+
+#partnerForm input {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: none;
+  font-size: 15px;
+}
+
+#partnerForm button {
+  width: 100%;
+  padding: 14px;
+  background: #ffd700;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#partnerForm button:hover {
+  background: #ffcc00;
+  transform: scale(1.05);
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- 🔥 PARTNER SECTION -->
 <section class="partner-section">
 
-<h2 style="text-align:center;">Partner With Jeera Chaska</h2>
+  <h2 class="partner-heading">🔥 Partner With Jeera Chaska</h2>
 
-<label for="businessType"><strong>Select Business Type</strong></label>
+  <div class="lead-counter">
+    🚀 <span id="counter">0</span>+ Retailers Joined Across Maharashtra
+  </div>
 
-<select id="businessType" required>
-  <option value="">-- Select --</option>
-  <option value="Retailer">Retailer</option>
-  <option value="Distributor">Distributor</option>
-</select>
+  <form id="partnerForm">
 
-<!-- Retailer Form -->
-<div id="retailForm" style="margin-top:20px; display:none;">
-  <h3>Retailer Inquiry</h3>
+    <label>Choose Business Type</label>
+    <select id="businessType" required>
+      <option value="">-- Select Option --</option>
+      <option value="Retailer">Retailer</option>
+      <option value="Distributor">Distributor</option>
+    </select>
 
-  <input type="text" id="r_name" placeholder="Your Name" required>
-  <input type="text" id="r_business" placeholder="Business Name" required>
-  <input type="tel" id="r_phone" placeholder="Phone Number" required>
-  <input type="email" id="r_email" placeholder="Email">
-  <input type="text" id="r_city" placeholder="City">
-  <textarea id="r_message" placeholder="Message"></textarea>
+    <input type="text" id="name" placeholder="Full Name" required>
+    <input type="text" id="shop" placeholder="Shop / Company Name" required>
+    <input type="tel" id="phone" placeholder="Mobile Number" required>
+    <input type="text" id="city" placeholder="City / District" required>
 
-  <button type="button" onclick="sendRetail()">Submit Retailer Inquiry</button>
-</div>
+    <button type="submit" id="submitBtn">
+      Submit Inquiry
+    </button>
 
-<!-- Distributor Form -->
-<div id="distForm" style="margin-top:20px; display:none;">
-  <h3>Distributor Inquiry</h3>
-
-  <input type="text" id="d_name" placeholder="Your Name" required>
-  <input type="text" id="d_company" placeholder="Company Name" required>
-  <input type="tel" id="d_phone" placeholder="Phone Number" required>
-  <input type="email" id="d_email" placeholder="Email">
-  <input type="text" id="d_region" placeholder="District / Region">
-  <textarea id="d_message" placeholder="Investment / Message"></textarea>
-
-  <button type="button" onclick="sendDist()">Submit Distributor Inquiry</button>
-</div>
+  </form>
 
 </section>
 
-<style>
-.partner-section {
-  max-width:700px;
-  margin:auto;
-  padding:60px 20px;
-  text-align:center;
-  background: linear-gradient(135deg, #fdf8ec, #fff);
-  border-radius:20px;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
-}
-
-/* 🔥 Attractive Heading */
-.partner-section h2 {
-  font-size:42px;
-  font-weight:800;
-  background: linear-gradient(45deg, #d4a017, #8b5e00);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-bottom:30px;
-  letter-spacing:1px;
-}
-
-/* Bigger Dropdown */
-select {
-  width:100%;
-  padding:15px;
-  font-size:18px;
-  font-weight:600;
-  border:2px solid #d4a017;
-  border-radius:10px;
-  background:#fffdf7;
-  cursor:pointer;
-  transition:0.3s;
-}
-
-select:focus {
-  outline:none;
-  box-shadow:0 0 10px rgba(212,160,23,0.4);
-}
-
-/* Inputs */
-input, textarea {
-  width:100%;
-  padding:12px;
-  margin:12px 0;
-  border:1px solid #ddd;
-  border-radius:8px;
-  font-size:15px;
-}
-
-/* Button */
-button {
-  background: linear-gradient(45deg, #d4a017, #b8860b);
-  color:white;
-  padding:14px;
-  border:none;
-  width:100%;
-  border-radius:8px;
-  font-size:16px;
-  font-weight:bold;
-  cursor:pointer;
-  transition:0.3s;
-}
-
-button:hover {
-  transform: translateY(-2px);
-  box-shadow:0 8px 20px rgba(0,0,0,0.15);
-}
-</style>
-
-<!-- EmailJS -->
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-
 <script>
-/* ========== INIT EMAILJS ========== */
-(function(){
-  emailjs.init("YOUR_PUBLIC_KEY"); // replace
-})();
 
-/* ========== SWITCH FORMS ========== */
-document.getElementById("businessType").addEventListener("change", function() {
-    let type = this.value;
+/* 🔥 Animated Counter */
+let count = 0;
+let target = 127;
+let speed = 20;
 
-    if (type === "Retailer") {
-        document.getElementById("retailForm").style.display = "block";
-        document.getElementById("distForm").style.display = "none";
-    } 
-    else if (type === "Distributor") {
-        document.getElementById("retailForm").style.display = "none";
-        document.getElementById("distForm").style.display = "block";
-    }
+function updateCounter() {
+  if (count < target) {
+    count++;
+    document.getElementById("counter").innerText = count;
+    setTimeout(updateCounter, speed);
+  }
+}
+
+window.onload = function() {
+  updateCounter();
+};
+
+/* 🔥 WhatsApp Form Submit */
+document.getElementById("partnerForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  let type = document.getElementById("businessType").value;
+  let name = document.getElementById("name").value;
+  let shop = document.getElementById("shop").value;
+  let phone = document.getElementById("phone").value;
+  let city = document.getElementById("city").value;
+
+  if (type === "") {
+    alert("Please select Business Type");
+    return;
+  }
+
+  let message =
+    "New " + type + " Inquiry %0A%0A" +
+    "Name: " + name + "%0A" +
+    "Shop: " + shop + "%0A" +
+    "Phone: " + phone + "%0A" +
+    "City: " + city;
+
+  let whatsappURL = "https://wa.me/918261937733?text=" + message;
+
+  window.open(whatsappURL, "_blank");
 });
 
-/* ========== SEND RETAILER ========== */
-function sendRetail() {
+/* 🔥 Change Button Text Based on Selection */
+document.getElementById("businessType").addEventListener("change", function() {
+  let btn = document.getElementById("submitBtn");
 
-  let name = document.getElementById("r_name").value;
-  let business = document.getElementById("r_business").value;
-  let phone = document.getElementById("r_phone").value;
-  let email = document.getElementById("r_email").value;
-  let city = document.getElementById("r_city").value;
-  let message = document.getElementById("r_message").value;
+  if (this.value === "Retailer") {
+    btn.innerText = "Submit Retailer Inquiry";
+  } 
+  else if (this.value === "Distributor") {
+    btn.innerText = "Submit Distributor Inquiry";
+  } 
+  else {
+    btn.innerText = "Submit Inquiry";
+  }
+});
 
-  // EMAIL
-  emailjs.send("YOUR_SERVICE_ID","YOUR_TEMPLATE_ID",{
-    type: "Retailer",
-    name: name,
-    business: business,
-    phone: phone,
-    email: email,
-    region: city,
-    message: message
-  });
-
-  // WHATSAPP
-  let text = "New Retailer Inquiry:%0A"
-    + "Name: " + name + "%0A"
-    + "Business: " + business + "%0A"
-    + "Phone: " + phone + "%0A"
-    + "Email: " + email + "%0A"
-    + "City: " + city + "%0A"
-    + "Message: " + message;
-
-  window.open("https://wa.me/918261937733?text=" + text, "_blank");
-}
-
-/* ========== SEND DISTRIBUTOR ========== */
-function sendDist() {
-
-  let name = document.getElementById("d_name").value;
-  let company = document.getElementById("d_company").value;
-  let phone = document.getElementById("d_phone").value;
-  let email = document.getElementById("d_email").value;
-  let region = document.getElementById("d_region").value;
-  let message = document.getElementById("d_message").value;
-
-  // EMAIL
-  emailjs.send("YOUR_SERVICE_ID","YOUR_TEMPLATE_ID",{
-    type: "Distributor",
-    name: name,
-    business: company,
-    phone: phone,
-    email: email,
-    region: region,
-    message: message
-  });
-
-  // WHATSAPP
-  let text = "New Distributor Inquiry:%0A"
-    + "Name: " + name + "%0A"
-    + "Company: " + company + "%0A"
-    + "Phone: " + phone + "%0A"
-    + "Email: " + email + "%0A"
-    + "Region: " + region + "%0A"
-    + "Message: " + message;
-
-  window.open("https://wa.me/918261937733?text=" + text, "_blank");
-}
 </script>
+
+</body>
+</html>
   
 <section class="contact">
 <h2>Contact Us</h2>
